@@ -1,0 +1,8 @@
+@import url('window.css');
+@import url('taskbar.css');
+
+html,
+body {
+    background-color: cadetblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
