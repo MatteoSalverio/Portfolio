@@ -1,0 +1,49 @@
+.desktop {
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    display: grid;
+    gap: 1vh;
+    grid-template-columns: 13vh 13vh 13vh;
+    grid-auto-rows: 13vh;
+}
+
+.app-icon {
+    height: 13vh;
+    aspect-ratio: 1;
+    /*background-color: rgba(0, 0, 0, 0.25);*/
+    cursor: pointer;
+    display: grid;
+    gap: 2vh;
+    user-select: none;
+}
+
+.app-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-icon:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.app-icon img {
+    height: 125%;
+    aspect-ratio: 1;
+    margin: auto;
+
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.app-icon p {
+    margin: 0;
+    text-align: center;
+    font-size: 2vh;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}

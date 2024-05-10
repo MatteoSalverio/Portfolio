@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matteo Salverio</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/icons/notepad.png">
 </head>
 
 <body>
+    <div class="desktop" id="desktop"></div>
+
     <div id="windowContainer"></div>
+
+    <div class="startMenu" id="startMenu" style="visibility: hidden;"></div>
     
     <div class="taskbar">
-        <div class="start-button">
+        <div class="start-button" id="startButton" onclick="toggleStartMenu()">
+            <img src="assets/icons/start.png">
             <p>Start</p>
         </div>
 

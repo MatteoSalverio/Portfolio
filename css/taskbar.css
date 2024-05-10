@@ -6,17 +6,33 @@
     height: 50px;
     background-color: lightgray;
     box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    user-select: none;
+    display: flex;
 }
 
 .start-button {
-    position: absolute;
-    top: 50%;
-    left: 2px;
-    transform: translateY(-50%);
+    margin: auto auto auto 2px;
     height: 40px;
-    width: 100px;
     background-color: lightgray;
     border: outset gray 2px;
+    display: flex;
+    cursor: pointer;
+}
+
+.start-button img {
+    margin-left: 1vh;
+    height: 98%;
+    aspect-ratio: 1;
+}
+
+.start-button p {
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    text-align: center;
 }
 
 .start-button:hover {
@@ -25,11 +41,8 @@
 }
 
 .start-button p {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 3px;
+    text-align: center;
     font-size: 25px;
     font-weight: bold;
     cursor: pointer;
@@ -37,25 +50,33 @@
 }
 
 .open-tasks {
-    position: absolute;
-    left: 120px;
-    top: 0;
-
-    width: fit-content;
+    margin: auto;
     height: 100%;
-    z-index: 100;
+    width: 100%;
 
-    display: flex;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.open-tasks::-webkit-scrollbar {
+    display: none;
 }
 
 .app-task {
     margin-left: 10px;
     height: 40px;
-    width: 300px;
+    width: 100%;
+    max-width: 250px;
     transform: translateY(3px);
     background-color: lightgray;
     border: outset gray 2px;
     cursor: pointer;
+
+    display: flex;
 }
 
 .app-task:hover {
@@ -65,20 +86,15 @@
 
 .app-task p {
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
     font-size: 20px;
     user-select: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vh;
 }
 
 .time {
-    position: absolute;
-    top: 50%;
-    right: 2px;
-    transform: translateY(-50%);
-
+    margin: auto 2px auto 2px;
     height: 40px;
     width: 100px;
     background-color: lightgray;
@@ -88,11 +104,10 @@
 }
 
 .time p {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    text-align: center;
+    margin-top: 7px;
     width: max-content;
     font-size: 20px;
+    user-select: none;
 }
