@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    text-align: center;
+}
+
+.ribbon {
+    margin-top: 2.5vh;
+    margin-left: 1vh;
+    width: 100%;
+    height: 20px;
+    text-align: left;
+}
+
+.ribbon-button {
+    margin: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+}
+
+.body-divider {
+    width: 98%;
+    background-color: gray;
+    border-radius: 0;
+}

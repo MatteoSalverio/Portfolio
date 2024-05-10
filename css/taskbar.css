@@ -15,7 +15,7 @@
     margin: auto auto auto 2px;
     height: 40px;
     background-color: lightgray;
-    border: outset gray 2px;
+    border: outset darkgray 2px;
     display: flex;
     cursor: pointer;
 }
@@ -24,6 +24,14 @@
     margin-left: 1vh;
     height: 98%;
     aspect-ratio: 1;
+
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 .start-button p {
@@ -37,7 +45,7 @@
 
 .start-button:hover {
     filter: brightness(95%);
-    border: inset gray 2px;
+    border-style: inset;
 }
 
 .start-button p {
@@ -73,7 +81,7 @@
     max-width: 250px;
     transform: translateY(3px);
     background-color: lightgray;
-    border: outset gray 2px;
+    border: outset darkgray 2px;
     cursor: pointer;
 
     display: flex;
@@ -81,7 +89,17 @@
 
 .app-task:hover {
     filter: brightness(95%);
-    border: inset gray 2px;
+    border-style: inset;
+}
+
+.app-task img {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 .app-task p {
@@ -98,15 +116,14 @@
     height: 40px;
     width: 100px;
     background-color: lightgray;
-    border: inset gray 2px;
+    border: inset darkgray 2px;
 
     padding: 0;
 }
 
 .time p {
-    margin: auto;
     text-align: center;
-    margin-top: 7px;
+    margin: 7px;
     width: max-content;
     font-size: 20px;
     user-select: none;

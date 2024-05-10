@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="../css/app.css">
+
+    <style>
+        .text-input {
+            position: absolute;
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            height: 80%;
+            background-color: rgb(241, 241, 241);
+            border: inset 1px white;
+            outline: none;
+            text-align: left;
+            padding: 2vh;
+            font-size: 5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ribbon">
+        <nav>
+            <button class="ribbon-button">File</button>
+            <button class="ribbon-button">Edit</button>
+            <button class="ribbon-button">Window</button>
+        </nav>
+    </div>
+
+    <hr class="body-divider">
+
+    <!--<textarea></textarea>-->
+    <div class="text-input" contenteditable="true"></div>
+</body>
+
+</html>

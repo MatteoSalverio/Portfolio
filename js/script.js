@@ -2,7 +2,7 @@ const windowContainer = document.getElementById("windowContainer");
 const startMenu = document.getElementById("startMenu");
 
 let mobileLayout = false;
-if (window.innerWidth < 500) {
+if (window.innerWidth < 650) {
     mobileLayout = true;
 }
 
@@ -74,7 +74,7 @@ class osWindow {
             <div class="window" id="${id}-window" style="transform: translate(0px, 0px); visibility: unset;">
                 <div class="title-bar" id="${id}-title-bar">
                     <div class="title-text" id="${id}-title-text">
-                        <img src="../assets/icons/${this.id.toLowerCase().split("_")[0]}.png">
+                        <img src="../assets/icons/${this.id.toLowerCase().split("_")[0]}.png" onerror="this.onerror=null; this.src='../assets/icons/file.png'">
                         <p>${this.title}</p>
                     </div>
                     <nav>
@@ -89,16 +89,9 @@ class osWindow {
                         </button>
                     </nav>
                 </div>
-                <div class="ribbon">
-                    <nav>
-                        <button class="ribbon-button">File</button>
-                        <button class="ribbon-button">Edit</button>
-                        <button class="ribbon-button">Window</button>
-                    </nav>
-                </div>
-                <hr class="body-divider">
+                
                 <div class="window-body">
-                    <p style="margin: 10px 0px 0px 10px;"><span style="font-weight: bold;">TODO:</span> Make Apps :)</p>
+                    <iframe src="apps/${this.id.toLowerCase().split("_")[0]}.html"></iframe>
                 </div>
             </div>
         `;
@@ -154,13 +147,13 @@ class taskbarElement {
         if (mobileLayout) {
             document.getElementById("openTasks").innerHTML += `
                 <div class="app-task" id="${id}-taskbar-element">
-                    <img src="../assets/icons/${id.toLowerCase().split("_")[0]}.png">
+                    <img src="../assets/icons/${id.toLowerCase().split("_")[0]}.png" onerror="this.onerror=null; this.src='../assets/icons/file.png'">
                 </div>
             `;
         } else {
             document.getElementById("openTasks").innerHTML += `
                 <div class="app-task" id="${id}-taskbar-element">
-                    <img src="../assets/icons/${id.toLowerCase().split("_")[0]}.png">
+                    <img src="../assets/icons/${id.toLowerCase().split("_")[0]}.png" onerror="this.onerror=null; this.src='../assets/icons/file.png'">
                     <p>${id}</p>
                 </div>
             `;
@@ -214,7 +207,7 @@ class icon {
 
         document.getElementById("desktop").innerHTML += `
             <div class="app-icon" id="${this.id}-icon">
-                <img src="../assets/icons/${this.id.toLowerCase()}.png">
+                <img src="../assets/icons/${this.id.toLowerCase()}.png" onerror="this.onerror=null; this.src='../assets/icons/file.png'">
                 <p>${this.id}</p>
             </div>
         `;
@@ -252,16 +245,16 @@ class program {
 
         startMenu.innerHTML += `
             <div class="menu-element" onclick="startProcess('${this.id}'); toggleStartMenu();">
-                <img src="../assets/icons/${this.id.toLowerCase()}.png">
+                <img src="../assets/icons/${this.id.toLowerCase()}.png" onerror="this.onerror=null; this.src='../assets/icons/file.png'">
                 <p>${this.id}</p>
             </div>
         `;
     }
 }
 
-const date = new Date();
 setInterval(() => {
-    const time = date.toLocaleTimeString('en-US', {
+    let date = new Date();
+    let time = date.toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true
@@ -284,5 +277,9 @@ document.addEventListener("click", event => {
         toggleStartMenu();
 });
 
+new program("Intro");
 new program("Explorer");
 new program("Notepad");
+//new program("RatLab");
+
+startProcess("Intro");
